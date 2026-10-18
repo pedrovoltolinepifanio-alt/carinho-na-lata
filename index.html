@@ -1,1 +1,604 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071a35">
+  <meta name="description" content="Carinho na Lata: estética automotiva com atendimento a domicílio. Consulte nossos serviços e solicite um orçamento.">
+  <title>Carinho na Lata | Estética Automotiva</title>
+
+  <style>
+    :root {
+      --azul: #071a35;
+      --azul2: #103765;
+      --dourado: #d8b45a;
+      --branco: #ffffff;
+      --cinza: #f2f4f7;
+      --texto: #172337;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--texto);
+      line-height: 1.6;
+      background: var(--branco);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: var(--azul);
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 900;
+      color: var(--dourado);
+    }
+
+    .logo small {
+      display: block;
+      color: white;
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: white;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--dourado);
+    }
+
+    .hero {
+      background: linear-gradient(120deg, #071a35, #103765);
+      color: white;
+      padding: 70px 7%;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .tag {
+      color: var(--dourado);
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      line-height: 1.1;
+      margin: 18px 0;
+    }
+
+    h1 span {
+      color: var(--dourado);
+    }
+
+    .hero p {
+      color: #e0e8f2;
+      margin-bottom: 26px;
+      max-width: 520px;
+    }
+
+    .botao {
+      display: inline-block;
+      background: var(--dourado);
+      color: var(--azul);
+      padding: 13px 22px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .botao:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .foto {
+      background: #e8edf3;
+      color: #52657b;
+      border: 2px dashed #9eacbc;
+      border-radius: 12px;
+      min-height: 220px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: 10px;
+    }
+
+    .foto .icone {
+      font-size: 45px;
+    }
+
+    .foto strong {
+      color: var(--azul);
+    }
+
+    .foto span {
+      font-size: 12px;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .titulo {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .titulo h2 {
+      color: var(--azul);
+      font-size: clamp(26px, 4vw, 36px);
+      margin-bottom: 8px;
+    }
+
+    .titulo p {
+      color: #68778a;
+    }
+
+    .servicos {
+      background: var(--cinza);
+    }
+
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px #071a3510;
+    }
+
+    .card .foto {
+      border: none;
+      border-radius: 0;
+      min-height: 155px;
+    }
+
+    .card-conteudo {
+      padding: 20px;
+    }
+
+    .card h3 {
+      color: var(--azul);
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .card p {
+      color: #637084;
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .preco {
+      color: #876719;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .sobre {
+      background: white;
+    }
+
+    .sobre-grade {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .sobre h2 {
+      color: var(--azul);
+      font-size: 32px;
+      margin: 12px 0;
+    }
+
+    .sobre p {
+      margin-bottom: 15px;
+      color: #59687b;
+    }
+
+    .passos {
+      background: var(--azul);
+      color: white;
+    }
+
+    .passos .titulo h2 {
+      color: white;
+    }
+
+    .passos .titulo p {
+      color: #d4deeb;
+    }
+
+    .passo {
+      text-align: center;
+      padding: 22px;
+    }
+
+    .numero {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--dourado);
+      color: var(--azul);
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .passo h3 {
+      margin-bottom: 8px;
+    }
+
+    .passo p {
+      color: #d4deeb;
+      font-size: 14px;
+    }
+
+    .antes-depois {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .contato {
+      text-align: center;
+      background: #f2f4f7;
+    }
+
+    .contato h2 {
+      color: var(--azul);
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    .contato p {
+      margin-bottom: 24px;
+      color: #59687b;
+    }
+
+    footer {
+      background: #041126;
+      color: white;
+      text-align: center;
+      padding: 28px 7%;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--dourado);
+    }
+
+    @media (max-width: 760px) {
+      header {
+        justify-content: center;
+        text-align: center;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      .hero,
+      .sobre-grade {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 48px;
+      }
+
+      .grade {
+        grid-template-columns: 1fr;
+      }
+
+      .foto {
+        min-height: 180px;
+      }
+
+      section {
+        padding: 48px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a class="logo" href="#inicio">
+      CARINHO NA LATA
+      <small>ESTÉTICA AUTOMOTIVA</small>
+    </a>
+
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div>
+        <span class="tag">Cuidado em cada detalhe</span>
+        <h1>Seu carro merece <span>esse carinho.</span></h1>
+        <p>
+          Estética automotiva com atendimento a domicílio.
+          Mais praticidade para você e mais cuidado para o seu carro.
+        </p>
+        <a class="botao" href="#contato">SOLICITAR ORÇAMENTO</a>
+      </div>
+
+      <div class="foto">
+        <div class="icone">🚘</div>
+        <strong>FOTO PRINCIPAL AQUI</strong>
+        <span>Substituir por uma foto real de um carro detalhado.</span>
+      </div>
+    </section>
+
+    <section class="servicos" id="servicos">
+      <div class="titulo">
+        <h2>Nossos serviços</h2>
+        <p>O cuidado ideal para deixar seu carro em outro nível.</p>
+      </div>
+
+      <div class="grade">
+        <article class="card">
+          <div class="foto">
+            <span class="icone">🧽</span>
+            <strong>FOTO DA LIMPEZA SIMPLES</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Limpeza simples</h3>
+            <p>Uma limpeza para manter seu veículo bem cuidado no dia a dia.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">✨</span>
+            <strong>FOTO DA LIMPEZA COMPLETA</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Limpeza completa</h3>
+            <p>Um cuidado mais detalhado para renovar a aparência do veículo.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">🪑</span>
+            <strong>FOTO DA HIGIENIZAÇÃO</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Higienização de estofados</h3>
+            <p>Limpeza especializada dos estofados, conforme o material e a necessidade.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">🚿</span>
+            <strong>FOTO DA LIMPEZA EXTERNA</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Limpeza externa</h3>
+            <p>Cuidado com a parte externa para recuperar o aspecto limpo do veículo.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">🛡️</span>
+            <strong>FOTO DA VITRIFICAÇÃO</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Vitrificação simples</h3>
+            <p>Proteção da pintura conforme o pacote e o produto utilizado.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">💎</span>
+            <strong>FOTO DO ACABAMENTO</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Vitrificação completa</h3>
+            <p>Um tratamento mais abrangente de proteção e acabamento da pintura.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">🧹</span>
+            <strong>FOTO DA LIMPEZA INTERNA</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Limpeza interna completa</h3>
+            <p>Limpeza detalhada das áreas internas, respeitando cada superfície.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">🌟</span>
+            <strong>FOTO DO POLIMENTO</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Polimento automotivo</h3>
+            <p>Tratamento da pintura para melhorar o brilho e a aparência, conforme avaliação.</p>
+            <span class="preco">Consulte o preço</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="foto">
+            <span class="icone">🚗</span>
+            <strong>FOTO DE OUTROS SERVIÇOS</strong>
+          </div>
+          <div class="card-conteudo">
+            <h3>Outros serviços</h3>
+            <p>Consulte também outros tratamentos disponíveis para seu veículo.</p>
+            <span class="preco">Peça seu orçamento</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sobre">
+      <div class="sobre-grade">
+        <div>
+          <span class="tag">Praticidade para você</span>
+          <h2>A estética automotiva vai até você.</h2>
+          <p>
+            Não precisa perder tempo levando seu carro até um estabelecimento.
+            Consulte a disponibilidade do atendimento no seu endereço.
+          </p>
+          <p>
+            Os serviços, os valores e as condições de atendimento são
+            combinados antes do agendamento.
+          </p>
+          <a class="botao" href="#contato">QUERO UM ORÇAMENTO</a>
+        </div>
+
+        <div class="foto">
+          <div class="icone">📸</div>
+          <strong>FOTO DO ATENDIMENTO A DOMICÍLIO</strong>
+          <span>Adicionar uma foto real do profissional trabalhando.</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="titulo">
+        <h2>Antes e depois</h2>
+        <p>Em breve, resultados reais dos nossos serviços.</p>
+      </div>
+
+      <div class="antes-depois">
+        <div class="foto">
+          <div class="icone">📷</div>
+          <strong>ANTES</strong>
+          <span>Adicionar foto real antes do serviço.</span>
+        </div>
+
+        <div class="foto">
+          <div class="icone">✨</div>
+          <strong>DEPOIS</strong>
+          <span>Adicionar foto real após o serviço.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="passos" id="como-funciona">
+      <div class="titulo">
+        <h2>Como funciona?</h2>
+        <p>Três passos para cuidar do seu carro.</p>
+      </div>
+
+      <div class="grade">
+        <div class="passo">
+          <div class="numero">1</div>
+          <h3>Entre em contato</h3>
+          <p>Conte qual é o seu carro e qual serviço deseja.</p>
+        </div>
+
+        <div class="passo">
+          <div class="numero">2</div>
+          <h3>Agende seu horário</h3>
+          <p>Consulte o orçamento, a disponibilidade e a região atendida.</p>
+        </div>
+
+        <div class="passo">
+          <div class="numero">3</div>
+          <h3>Receba o atendimento</h3>
+          <p>Com tudo combinado, cuidamos do seu veículo no local acordado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contato" id="contato">
+      <h2>Vamos cuidar do seu carro?</h2>
+      <p>
+        Entre em contato para consultar os serviços, os preços
+        e a disponibilidade de atendimento a domicílio.
+      </p>
+
+      <a class="botao"
+         href="https://wa.me/"
+         target="_blank"
+         rel="noopener noreferrer">
+        CONFIGURAR WHATSAPP
+      </a>
+
+      <p style="font-size:12px; margin-top:16px; margin-bottom:0;">
+        O botão do WhatsApp precisa receber o número comercial antes da divulgação.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>CARINHO NA LATA</strong>
+    <p>Estética automotiva com cuidado em cada detalhe.</p>
+    <p>© 2026 Carinho na Lata. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>
+
